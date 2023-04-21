@@ -1,0 +1,27 @@
+.main {
+  min-height: 85vh;
+  background-color: antiquewhite;
+}
+
+.click {
+  cursor: pointer;
+}
+
+.nav,
+.footer {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+
+.nav {
+  background-color: var(--color-orange);
+  font-weight: bold;
+}
+
+.footer {
+  background-color: black;
+  font-size: 12px;
+  text-align: center;
+}
