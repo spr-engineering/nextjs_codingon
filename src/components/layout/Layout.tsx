@@ -1,6 +1,7 @@
 import { ReactNode } from 'react'
-import Header from './Header'
+import Navbar from './Navbar'
 import Footer from './Footer'
+import styles from '@/styles/Layout.module.css'
 
 interface Props {
   children: ReactNode
@@ -9,8 +10,8 @@ interface Props {
 export default function Layout({ children }: Props) {
   return (
     <>
-      <Header />
-      <main>{children}</main>
+      <Navbar />
+      <main className={styles.main}>{children}</main>
       <Footer />
     </>
   )
