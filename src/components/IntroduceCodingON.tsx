@@ -5,14 +5,14 @@ export default function IntroduceCodingON() {
         <div className="paragraph">
           In 2020, Spreatics was selected as the official SW education partner
           of the Seoul Metropolitan Government. Currently, we are operating a
-          "SW Talent Training Program" with the Seoul Business Agency to train
-          SW talents in each web/AI/big data field and foster them as developers
-          necessary for corporate sites. We will help SW talent strengthen their
-          employment capabilities and SW skills with field
+          &quot;SW Talent Training Program&quot; with the Seoul Business Agency
+          to train SW talents in each web/AI/big data field and foster them as
+          developers necessary for corporate sites. We will help SW talent
+          strengthen their employment capabilities and SW skills with field
           practitioners/experts.
         </div>
         <div className="paragraph">
-          We support continuous learning and challenges for employees'
+          We support continuous learning and challenges for employees&apos;
           competency development in line with changes in the future society. We
           develop a training program that takes into account the characteristics
           of incumbent workers, provide systematic training, SW skill
@@ -28,7 +28,7 @@ export default function IntroduceCodingON() {
           preparation of student records, and club operation with
           output-oriented classes. As coding education is selected as an
           essential subject, Spreatics provides various SW education that meets
-          students' eyes to help them with information subjects.
+          students&apos; eyes to help them with information subjects.
         </div>
         <div className="paragraph">
           CodingON has developed its own LMS and platform to provide SW
