@@ -1,5 +1,18 @@
 .main {
   min-height: 85vh;
+  background-color: antiquewhite;
+}
+
+.click {
+  cursor: pointer;
+}
+
+.nav,
+.footer {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  color: white;
 }
 
 .nav {
@@ -9,12 +22,6 @@
 
 .footer {
   background-color: black;
-}
-
-.nav,
-.footer {
-  padding: 18px 20px;
-  display: flex;
-  justify-content: space-between;
-  color: white;
+  font-size: 12px;
+  text-align: center;
 }

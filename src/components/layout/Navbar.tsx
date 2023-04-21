@@ -4,8 +4,8 @@ export default function Navbar() {
   return (
     <>
       <nav className={styles.nav}>
-        <div>Main</div>
-        <div>Menu</div>
+        <div className={styles.click}>Main</div>
+        <div className={styles.click}>Menu</div>
       </nav>
     </>
   )
