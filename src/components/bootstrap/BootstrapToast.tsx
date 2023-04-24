@@ -11,13 +11,17 @@ export default function BootstrapToast() {
       <Button onClick={toggleShow} className="mb-2">
         Toggle Toast <strong>with</strong> Animation
       </Button>
-      <Toast show={show} onClose={toggleShow}>
-        <Toast.Header>
-          <strong className="me-auto">Bootstrap</strong>
-          <small>11 mins ago</small>
-        </Toast.Header>
-        <Toast.Body>Woohoo, you're reading this text in a Toast!</Toast.Body>
-      </Toast>
+      <div>
+        <Toast show={show} onClose={toggleShow}>
+          <Toast.Header>
+            <strong className="me-auto">Bootstrap</strong>
+            <small>11 mins ago</small>
+          </Toast.Header>
+          <Toast.Body>
+            Woohoo, you&apos;re reading this text in a Toast!
+          </Toast.Body>
+        </Toast>
+      </div>
     </>
   )
 }
