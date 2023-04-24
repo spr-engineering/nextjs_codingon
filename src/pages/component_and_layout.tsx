@@ -3,10 +3,8 @@ import Layout from '@/components/layout/Layout'
 
 export default function ComponentAndLayout() {
   return (
-    <>
-      <Layout>
-        <IntroduceCodingON />
-      </Layout>
-    </>
+    <Layout>
+      <IntroduceCodingON />
+    </Layout>
   )
 }
