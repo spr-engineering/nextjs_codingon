@@ -11,6 +11,9 @@ export default function Home() {
         <li>
           <Link href="/bootstrap">bootstrap</Link>
         </li>
+        <li>
+          <Link href="/image">image</Link>
+        </li>
       </ul>
     </>
   )
