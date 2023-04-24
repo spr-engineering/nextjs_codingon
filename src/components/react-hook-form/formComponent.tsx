@@ -56,7 +56,7 @@ export default function FormComponent() {
         </Form>
       </div>
       <div style={{ padding: '20px' }}>
-        제출 값<div>ID : {submitValue?.id}</div>
+        submit value<div>ID : {submitValue?.id}</div>
         <div>PW : {submitValue?.pw}</div>
       </div>
     </>

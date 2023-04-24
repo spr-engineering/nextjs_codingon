@@ -1,6 +1,5 @@
 .main {
-  min-height: 85vh;
-  background-color: antiquewhite;
+  min-height: 80vh;
 }
 
 .click {
@@ -24,4 +23,9 @@
   background-color: black;
   font-size: 12px;
   text-align: center;
+}
+
+.component_and_layout_main {
+  min-height: 85vh;
+  background-color: antiquewhite;
 }

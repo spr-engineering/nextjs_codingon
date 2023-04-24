@@ -5,9 +5,6 @@ export default function RouterNav() {
   const router = useRouter()
   return (
     <>
-      <Link href="/">← home</Link>
-      <br />
-      <br />
       <Link
         href="/router/red"
         style={{ color: router.pathname === '/router/red' ? 'red' : 'black' }}
