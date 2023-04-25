@@ -9,14 +9,14 @@ export default function ImagePage() {
     <>
       <Layout>
         <button
-          onClick={(e) => {
+          onClick={() => {
             setIsNext13(true)
           }}
         >
           nextjs 13 image
         </button>
         <button
-          onClick={(e) => {
+          onClick={() => {
             setIsNext13(false)
           }}
         >
