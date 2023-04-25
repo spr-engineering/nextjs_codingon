@@ -23,6 +23,11 @@ export default function Home() {
           </li>
         </ul>
       </Layout>
+      <style jsx>{`
+        li {
+          padding: 5px;
+        }
+      `}</style>
     </>
   )
 }

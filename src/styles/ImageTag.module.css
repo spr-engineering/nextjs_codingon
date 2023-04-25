@@ -1,0 +1,51 @@
+.imageTag {
+  margin-bottom: 20px;
+}
+
+.imageBorder {
+  width: 687px;
+  height: 105px;
+  border: 1px solid black;
+  margin-bottom: 20px;
+}
+
+.fill {
+  width: 687px;
+  height: 105px;
+  position: relative;
+}
+
+.imageStyles {
+  width: 900px;
+  height: 105px;
+  position: relative;
+  border: 1px solid black;
+  margin-bottom: 20px;
+}
+
+.responsive {
+  width: 100vw;
+  height: 100px;
+  position: relative;
+  border: 1px solid black;
+  margin-bottom: 20px;
+}
+
+.container {
+  position: relative;
+  padding-top: 30%;
+}
+.content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid black;
+  margin-bottom: 20px;
+}
+
+.imageOption {
+  font-weight: 600;
+  color: blue;
+}

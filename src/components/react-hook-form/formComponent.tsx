@@ -36,17 +36,17 @@ export default function FormComponent() {
                 required: true,
                 minLength: {
                   value: 8,
-                  message: '* 비밀번호는 8~20자리 이내로 입력해주세요.',
+                  message: '* Please enter a password between 8 and 20 digits.',
                 },
                 maxLength: {
                   value: 20,
-                  message: '* 비밀번호는 8~20자리 이내로 입력해주세요.',
+                  message: '* Please enter a password between 8 and 20 digits.',
                 },
                 pattern: {
                   value:
                     /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]/,
                   message:
-                    '* 비밀번호는 영문, 숫자, 특수문자를 혼합하여 입력해주세요.',
+                    '* Please enter the password mixed with English, numbers, and special characters.',
                 },
               })}
             />
