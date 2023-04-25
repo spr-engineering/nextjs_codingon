@@ -5,7 +5,6 @@ export default function Home() {
   return (
     <>
       <Layout>
-        <h2 style={{ paddingLeft: '20px' }}>목차</h2>
         <ul>
           <li>
             <Link href="/component_and_layout">component and layout</Link>

@@ -1,34 +1,29 @@
+import ImageComponent from '@/components/image_tag/Image'
+import LegacyImageComponent from '@/components/image_tag/LegacyImage'
 import Layout from '@/components/layout/Layout'
-import Image from 'next/image'
-import Image2 from 'next/legacy/image'
+import { useState } from 'react'
 
 export default function ImagePage() {
+  const [isNext13, setIsNext13] = useState(true)
   return (
     <>
       <Layout>
-        <div>next.js 13 version Image Tag</div>
-        <div className="img">
-          <Image src="/codingon_logo.png" alt="코딩온" fill />
-        </div>
-        <br />
-        <div>next.js 12 version Image Tag</div>
-        <div className="img">
-          <Image2
-            src="/codingon_logo.png"
-            alt="코딩온"
-            width={600}
-            height={100}
-          />
-        </div>
+        <button
+          onClick={(e) => {
+            setIsNext13(true)
+          }}
+        >
+          nextjs 13 image
+        </button>
+        <button
+          onClick={(e) => {
+            setIsNext13(false)
+          }}
+        >
+          nextjs 12 image
+        </button>
+        {isNext13 ? <ImageComponent /> : <LegacyImageComponent />}
       </Layout>
-
-      <style jsx>{`
-        .img {
-          position: relative;
-          width: 600px;
-          height: 100px;
-        }
-      `}</style>
     </>
   )
 }
