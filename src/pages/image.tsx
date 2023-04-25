@@ -13,14 +13,14 @@ export default function ImagePage() {
             setIsNext13(true)
           }}
         >
-          nextjs 13 image
+          Next.js Version 13
         </button>
         <button
           onClick={() => {
             setIsNext13(false)
           }}
         >
-          nextjs 12 image
+          Next.js Version 12
         </button>
         {isNext13 ? <ImageComponent /> : <LegacyImageComponent />}
       </Layout>

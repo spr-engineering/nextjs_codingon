@@ -4,13 +4,19 @@ import styles from '@/styles/ImageTag.module.css'
 export default function LegacyImageComponent() {
   return (
     <>
-      <h3>next.js 12 version Image Tag</h3>
+      <h2>Next.js Version 12 Image Tag</h2>
       <div className={styles.imageTag}>
         <span className={styles.imageOption}>default (intrinsic)</span>, image
         width:687px, height:105px
         <br />
         <div className={styles.imageBorder}>
-          <Image src="/logo.png" alt="코딩온" width={687} height={105} />
+          <Image
+            src="/logo.png"
+            alt="코딩온"
+            width={687}
+            height={105}
+            className={styles.imageBorder}
+          />
         </div>
       </div>
       <div className={styles.imageTag}>
@@ -53,11 +59,10 @@ export default function LegacyImageComponent() {
             width: '687px',
             height: '105px',
             position: 'relative',
+            border: '1px solid black',
           }}
         >
-          <div className={styles.imageBorder}>
-            <Image src="/logo.png" alt="코딩온" layout="fill" />
-          </div>
+          <Image src="/logo.png" alt="코딩온" layout="fill" />
         </div>
       </div>
     </>
