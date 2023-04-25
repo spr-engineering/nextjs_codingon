@@ -29,10 +29,21 @@ export default function ImageComponent() {
           style={{ objectFit: 'contain' }}
         />
       </div>
-      <span className={styles.imageOption}>
-        fill, object-fit:contain, responsive
-      </span>
-      , div width:100vw, height:100px
+      <span className={styles.imageOption}>fill, object-fit:cover</span>, div
+      width:900px, height:105px
+      <div className={styles.imageStyles}>
+        <Image
+          src="/logo.png"
+          alt="코딩온"
+          fill
+          style={{ objectFit: 'cover' }}
+        />
+      </div>
+      <br />
+      <hr />
+      <h3>Responsive</h3>
+      <span className={styles.imageOption}>fill, object-fit:contain,</span>, div
+      width:90vw, height:100px
       <div className={styles.responsive}>
         <br />
         <Image
@@ -55,20 +66,10 @@ export default function ImageComponent() {
           />
         </div>
       </div>
-      <span className={styles.imageOption}>fill, object-fit:cover</span>, div
-      width:900px, height:105px
-      <div className={styles.imageStyles}>
-        <Image
-          src="/logo.png"
-          alt="코딩온"
-          fill
-          style={{ objectFit: 'cover' }}
-        />
-      </div>
       <span className={styles.imageOption}>
         fill, object-fit:cover, responsive
       </span>
-      , div width:100vw, height:100px
+      , div width:90vw, height:100px
       <div className={styles.responsive}>
         <br />
         <Image

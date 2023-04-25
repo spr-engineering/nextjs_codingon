@@ -24,7 +24,7 @@
 }
 
 .responsive {
-  width: 100vw;
+  width: 90vw;
   height: 100px;
   position: relative;
   border: 1px solid black;
@@ -48,4 +48,9 @@
 .imageOption {
   font-weight: 600;
   color: blue;
+}
+
+.imageResponsive {
+  font-weight: 600;
+  color: red;
 }
