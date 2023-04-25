@@ -1,0 +1,54 @@
+.imageTag {
+  margin-bottom: 20px;
+}
+
+.imageBorder {
+  border: 1px solid black;
+}
+
+.fill {
+  width: 687px;
+  height: 105px;
+  position: relative;
+}
+
+.imageStyles {
+  width: 900px;
+  height: 105px;
+  position: relative;
+  border: 1px solid black;
+  margin-bottom: 20px;
+}
+
+.responsive {
+  width: 90vw;
+  height: 100px;
+  position: relative;
+  border: 1px solid black;
+  margin-bottom: 20px;
+}
+
+.container {
+  width: 90vw;
+  position: relative;
+  padding-top: 20%;
+  border: 1px solid black;
+  margin-bottom: 20px;
+}
+.content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.imageOption {
+  font-weight: 600;
+  color: blue;
+}
+
+.imageResponsive {
+  font-weight: 600;
+  color: red;
+}

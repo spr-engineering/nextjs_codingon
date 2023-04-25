@@ -1,11 +1,11 @@
 import styles from '@/styles/Layout.module.css'
+import Link from 'next/link'
 
 export default function Navbar() {
   return (
     <>
       <nav className={styles.nav}>
-        <div className={styles.click}>Main</div>
-        <div className={styles.click}>Menu</div>
+        <Link href="/">Home</Link>
       </nav>
     </>
   )

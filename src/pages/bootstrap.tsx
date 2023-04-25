@@ -1,3 +1,4 @@
+import Layout from '@/components/layout/Layout'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import BootstrapAccordion from '@/components/bootstrap/BootstrapAccordion'
 import BootstrapButtons from '@/components/bootstrap/BootstrapButtons'
@@ -10,21 +11,24 @@ import BootstarpSpinners from '@/components/bootstrap/BootstrapSpinners'
 export default function Bootstrap() {
   return (
     <>
-      <BootstrapNavbar />
-      <div>
-        <BootstrapAccordion />
-        <hr />
-        <BootstrapButtons />
-        <br />
-        <hr />
-        <BootstrapToast />
-        <hr />
-        <BootstrapModal />
-        <hr />
-        <BootstrapProgressBar />
-        <hr />
-        <BootstarpSpinners />
-      </div>
+      <Layout>
+        <BootstrapNavbar />
+        <div>
+          <BootstrapAccordion />
+          <hr />
+          <BootstrapButtons />
+          <br />
+          <hr />
+          <BootstrapToast />
+          <hr />
+          <BootstrapModal />
+          <hr />
+          <BootstrapProgressBar />
+          <hr />
+          <BootstarpSpinners />
+        </div>
+      </Layout>
+
       <style jsx>{`
         div {
           padding: 20px;
