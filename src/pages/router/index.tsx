@@ -1,11 +1,11 @@
 import Layout from '@/components/layout/Layout'
-import Router from '@/components/router/Router'
+import RouterOptions from '@/components/router/RouterOptions'
 
 export default function Index() {
   return (
     <>
       <Layout>
-        <Router />
+        <RouterOptions />
       </Layout>
     </>
   )
