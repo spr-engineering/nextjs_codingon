@@ -23,7 +23,9 @@
     "react-bootstrap": "^2.7.4",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.43.9",
-    "typescript": "5.0.4"
+    "typescript": "5.0.4",
+    "winston": "^3.8.2",
+    "winston-daily-rotate-file": "^4.7.1"
   },
   "devDependencies": {
     "cypress": "^12.11.0",
