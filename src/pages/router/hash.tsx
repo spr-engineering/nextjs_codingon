@@ -1,34 +1,42 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import Layout from '@/components/layout/Layout'
+import IntroduceCodingON from '@/components/component_and_layout/IntroduceCodingON'
 
 const Hash = () => {
   const router = useRouter()
+  const [showPopup, setShowPopup] = useState(
+    router.query.showPopup ? true : false,
+  )
+
+  const sendMsg = (msg: string) => {
+    showPopup && alert(msg)
+    console.log('** ' + msg)
+  }
+  const sendError = (msg: string, err: Error) => {
+    showPopup && alert(msg)
+    console.error(msg, err)
+  }
+
   useEffect(() => {
     const handleRouteChangeStart = (url: string) => {
-      alert(`Route change started to ${url}`)
-      console.log(`Route change started to ${url}`)
+      sendMsg(`Route change started to ${url}`)
     }
     const handleRouteChangeComplete = (url: string) => {
-      alert(`Route change completed to ${url}`)
-      console.log(`Route change completed to ${url}`)
+      sendMsg(`Route change completed to ${url}`)
     }
     const handleRouteChangeError = (err: Error, url: string) => {
-      alert(`Error occurred while changing route to ${url}`)
-      console.error(`Error occurred while changing route to ${url}`, err)
+      sendError(`Error occurred while changing route to ${url}`, err)
     }
     const handleBeforeHistoryChange = (url: string) => {
-      alert(`Before history change to ${url}`)
-      console.log(`Before history change to ${url}`)
+      sendMsg(`Before history change to ${url}`)
     }
     const handleHashChangeStart = (url: string) => {
-      alert(`Hash change started to ${url}`)
-      console.log(`Hash change started to ${url}`)
+      sendMsg(`Hash change started to ${url}`)
     }
     const handleHashChangeComplete = (url: string) => {
-      alert(`Hash change completed to ${url}`)
-      console.log(`Hash change completed to ${url}`)
+      sendMsg(`Hash change completed to ${url}`)
     }
 
     router.events.on('routeChangeStart', handleRouteChangeStart)
@@ -46,18 +54,43 @@ const Hash = () => {
       router.events.off('hashChangeStart', handleHashChangeStart)
       router.events.off('hashChangeComplete', handleHashChangeComplete)
     }
-  }, [])
+  }, [showPopup])
   return (
     <>
       <Layout>
         <div>
           <h2>router.events results</h2>
+          <h3>
+            show popup{' '}
+            <input
+              type="checkbox"
+              checked={showPopup}
+              onChange={() => {
+                setShowPopup(!showPopup)
+              }}
+            />
+          </h3>
           <ul>
             <li>
-              <Link href="#hash1">Hash 1</Link>
+              <div id="hash1">
+                <Link href="#hash2">Move to hash 2</Link>
+                <br />
+                <br />
+                <div style={{ backgroundColor: 'black' }}>
+                  <IntroduceCodingON />
+                </div>
+              </div>
             </li>
+            <div style={{ height: '80vh' }}></div>
             <li>
-              <Link href="#hash2">Hash 2</Link>
+              <div id="hash2">
+                <Link href="#hash1">Move to hash 1</Link>
+                <br />
+                <br />
+                <div style={{ backgroundColor: 'black' }}>
+                  <IntroduceCodingON />
+                </div>
+              </div>
             </li>
           </ul>
         </div>{' '}

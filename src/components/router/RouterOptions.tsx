@@ -1,14 +1,24 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function RouterOptions() {
-  const [useBeforePopState, setUseBeforePopState] = useState(false)
   const router = useRouter()
+  const [useBeforePopState, setUseBeforePopState] = useState(false)
+  const [showPopup, setShowPopup] = useState(false)
+
+  const sendMsg = (msg: string) => {
+    showPopup && alert(msg)
+    console.log('** ' + msg)
+  }
+  const sendError = (msg: string, err: Error) => {
+    showPopup && alert(msg)
+    console.error(msg, err)
+  }
 
   useEffect(() => {
     router.beforePopState(({ url, as, options }) => {
-      alert('beforePopState')
+      showPopup && alert('beforePopState')
       if (useBeforePopState) {
         if (as !== router.asPath) {
           window.history.pushState('', '')
@@ -25,28 +35,22 @@ export default function RouterOptions() {
 
   useEffect(() => {
     const handleRouteChangeStart = (url: string) => {
-      alert(`Route change started to ${url}`)
-      console.log(`Route change started to ${url}`)
+      sendMsg(`Route change started to ${url}`)
     }
     const handleRouteChangeComplete = (url: string) => {
-      alert(`Route change completed to ${url}`)
-      console.log(`Route change completed to ${url}`)
+      sendMsg(`Route change completed to ${url}`)
     }
     const handleRouteChangeError = (err: Error, url: string) => {
-      alert(`Error occurred while changing route to ${url}`)
-      console.error(`Error occurred while changing route to ${url}`, err)
+      sendError(`Error occurred while changing route to ${url}`, err)
     }
     const handleBeforeHistoryChange = (url: string) => {
-      alert(`Before history change to ${url}`)
-      console.log(`Before history change to ${url}`)
+      sendMsg(`Before history change to ${url}`)
     }
     const handleHashChangeStart = (url: string) => {
-      alert(`Hash change started to ${url}`)
-      console.log(`Hash change started to ${url}`)
+      sendMsg(`Hash change started to ${url}`)
     }
     const handleHashChangeComplete = (url: string) => {
-      alert(`Hash change completed to ${url}`)
-      console.log(`Hash change completed to ${url}`)
+      sendMsg(`Hash change completed to ${url}`)
     }
 
     router.events.on('routeChangeStart', handleRouteChangeStart)
@@ -64,11 +68,20 @@ export default function RouterOptions() {
       router.events.off('hashChangeStart', handleHashChangeStart)
       router.events.off('hashChangeComplete', handleHashChangeComplete)
     }
-  }, [])
+  }, [showPopup])
 
   return (
     <>
       <h2>Router Options</h2>
+      <h3>
+        show popup{' '}
+        <input
+          type="checkbox"
+          onChange={() => {
+            setShowPopup(!showPopup)
+          }}
+        />
+      </h3>
       <ul>
         <li>
           <h4>router.back</h4>
@@ -110,7 +123,7 @@ export default function RouterOptions() {
         </li>
         <li>
           <h4>router.events</h4>
-          Check alert and console
+          Check alert or console
           <br />
           <br />
           <ul>
@@ -137,7 +150,15 @@ export default function RouterOptions() {
               hashChangeComplete : Fires when the hash has changed but not the
               page
             </li>
-            <Link href="/router/hash">go test hash example</Link>
+            <Link
+              href={{
+                pathname: '/router/hash',
+                query: { showPopup: showPopup },
+              }}
+              as="/router/hash"
+            >
+              go test hash example
+            </Link>
           </ul>
         </li>
       </ul>
