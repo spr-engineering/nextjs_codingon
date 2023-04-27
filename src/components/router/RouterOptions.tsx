@@ -123,7 +123,7 @@ export default function RouterOptions() {
         </li>
         <li>
           <h4>router.events</h4>
-          Check alert or console
+          Check alert or console log (F12)
           <br />
           <br />
           <ul>
@@ -153,7 +153,7 @@ export default function RouterOptions() {
             <Link
               href={{
                 pathname: '/router/hash',
-                query: { showPopup: showPopup },
+                query: { showPopup },
               }}
               as="/router/hash"
             >
