@@ -13,10 +13,13 @@ export default function Home() {
             <Link href="/bootstrap">bootstrap</Link>
           </li>
           <li>
-            <Link href="/router">router</Link>
+            <Link href="/image">image</Link>
           </li>
           <li>
-            <Link href="/image">image</Link>
+            <Link href="/link">link</Link>
+          </li>
+          <li>
+            <Link href="/router">router</Link>
           </li>
           <li>
             <Link href="/react_hook_form">react-hook-form</Link>

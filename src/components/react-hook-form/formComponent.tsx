@@ -23,10 +23,10 @@ export default function FormComponent() {
 
   return (
     <>
-      <div className="form-container" style={{ padding: '20px' }}>
+      <div className="form-container">
         <Form onSubmit={handleSubmit(onSubmit)}>
           <div>
-            ID <input {...register('id')} />
+            ID <input {...register('id', { required: true })} />
           </div>
           <div>
             PW{' '}

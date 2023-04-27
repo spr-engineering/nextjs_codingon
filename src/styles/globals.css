@@ -9,3 +9,7 @@ body {
   --color-orange: #f9a130;
   --color-lightorange: #fef2e0;
 }
+
+li {
+  padding: 5px;
+}
