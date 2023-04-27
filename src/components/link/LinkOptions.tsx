@@ -1,16 +1,16 @@
 import Link from 'next/link'
 
-export default function LinkLi() {
+export default function LinkOptions() {
   return (
     <>
       <h2>Link Tag Options</h2>
       <ul>
         <li>
-          <Link href={'/link'}>href=&apos;/link&apos;</Link>
+          <Link href="/link">href=&apos;/link&apos;</Link>
           <div>: The path or URL to navigate to</div>
         </li>
         <li>
-          <Link href={'/link/as'}>as</Link>
+          <Link href="/link/as">as</Link>
           <div>
             : Optional decorator for the path that will be shown in the browser
             URL bar
@@ -34,9 +34,7 @@ export default function LinkLi() {
           </div>
         </li>
         <li>
-          <Link href="/link/shallow/on" shallow={true}>
-            shallow
-          </Link>
+          <Link href="/link/shallow/on">shallow</Link>
           <div>
             : Update the path of the current page without rerunning
             getStaticProps, getServerSideProps or getInitialProps. <br />
