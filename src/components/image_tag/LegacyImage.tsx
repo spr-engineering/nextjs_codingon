@@ -34,9 +34,8 @@ export default function LegacyImageComponent() {
         </div>
       </div>
       <div className={styles.imageTag}>
-        <span className={styles.imageOption}>fixed</span>
-        , image width:687px, height:105px
-        <br />
+        <span className={styles.imageOption}>fixed</span>, image width:687px,
+        height:105px
         <div className={styles.imageBorder}>
           <Image
             src="/logo.png"
@@ -52,12 +51,12 @@ export default function LegacyImageComponent() {
           position: 'relative',
         }}
       >
-        <span className={styles.imageOption}>fill</span>, div width:687px,
-        height:105px
+        <span className={styles.imageOption}>fill</span>, div width:1200px,
+        height:150px
         <div
           style={{
-            width: '687px',
-            height: '105px',
+            width: '1200px',
+            height: '150px',
             position: 'relative',
             border: '1px solid black',
           }}

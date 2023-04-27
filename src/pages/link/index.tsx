@@ -1,11 +1,11 @@
 import Layout from '@/components/layout/Layout'
-import RouterNav from '@/components/router/Router'
+import LinkLi from '@/components/link/LinkLi'
 
-export default function Blue() {
+export default function LinkPage() {
   return (
     <>
       <Layout>
-        <RouterNav />
+        <LinkLi />
       </Layout>
     </>
   )
