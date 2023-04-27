@@ -19,6 +19,7 @@ export default function RouterOptions() {
   useEffect(() => {
     router.beforePopState(({ url, as, options }) => {
       showPopup && alert('beforePopState')
+      console.log('** beforePopState')
       if (useBeforePopState) {
         if (as !== router.asPath) {
           window.history.pushState('', '')
@@ -31,7 +32,7 @@ export default function RouterOptions() {
     return () => {
       router.beforePopState(() => true)
     }
-  }, [useBeforePopState])
+  }, [useBeforePopState, showPopup])
 
   useEffect(() => {
     const handleRouteChangeStart = (url: string) => {
@@ -127,11 +128,17 @@ export default function RouterOptions() {
           <br />
           <br />
           <ul>
-            <li>routeChangeStart : Fires when a route starts to change</li>
-            <li>routeChangeComplete : Fires when a route changed completely</li>
             <li>
-              routeChangeError : Fires when there&apos;s an error when changing
-              routes, or a route load is cancelled{' '}
+              <strong>routeChangeStart</strong> : Fires when a route starts to
+              change
+            </li>
+            <li>
+              <strong>routeChangeComplete</strong> : Fires when a route changed
+              completely
+            </li>
+            <li>
+              <strong>routeChangeError</strong>: Fires when there&apos;s an
+              error when changing routes, or a route load is cancelled{' '}
               <button
                 type="button"
                 onClick={() => router.push('/test_routeChangeError')}
@@ -140,15 +147,16 @@ export default function RouterOptions() {
               </button>
             </li>
             <li>
-              beforeHistoryChange : Fires before changing the browser&apos;s
-              history
+              <strong>beforeHistoryChange</strong>: Fires before changing the
+              browser&apos;s history
             </li>
             <li>
-              hashChangeStart : Fires when the hash will change but not the page
+              <strong>hashChangeStart</strong>: Fires when the hash will change
+              but not the page
             </li>
             <li>
-              hashChangeComplete : Fires when the hash has changed but not the
-              page
+              <strong>hashChangeComplete</strong>: Fires when the hash has
+              changed but not the page
             </li>
             <Link
               href={{

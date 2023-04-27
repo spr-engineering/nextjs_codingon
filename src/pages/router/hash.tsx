@@ -6,7 +6,9 @@ import IntroduceCodingON from '@/components/component_and_layout/IntroduceCoding
 
 const Hash = () => {
   const router = useRouter()
-  const [showPopup, setShowPopup] = useState(router.query.showPopup)
+  const [showPopup, setShowPopup] = useState(
+    router.query.showPopup ? true : false,
+  )
 
   const sendMsg = (msg: string) => {
     showPopup && alert(msg)
