@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app'
 
 import { SessionProvider } from 'next-auth/react'
 import { Session } from 'next-auth'
+import { RecoilRoot } from 'recoil'
 
 export default function App({
   Component,
@@ -12,9 +13,11 @@ export default function App({
 }>) {
   return (
     <>
-      <SessionProvider session={pageProps.session}>
-        <Component {...pageProps} />
-      </SessionProvider>
+      <RecoilRoot>
+        <SessionProvider session={pageProps.session}>
+          <Component {...pageProps} />
+        </SessionProvider>
+      </RecoilRoot>
     </>
   )
 }
