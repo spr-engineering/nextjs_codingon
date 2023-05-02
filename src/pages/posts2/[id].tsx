@@ -1,4 +1,4 @@
-import { GetStaticProps } from 'next'
+import { GetStaticPaths, GetStaticProps } from 'next'
 
 interface Post {
   userId: number
@@ -8,33 +8,35 @@ interface Post {
 }
 
 interface Props {
-  posts: Post[]
+  post: Post
 }
 
-export default function GSP({ posts }: Props) {
+export default function GSP({ post }: Props) {
   return (
     <>
-      {posts.map((post) => (
-        <div key={`${post.id}`}>
-          <h1>title : {post.title}</h1>
-          <p>body : {post.body}</p>
-          <p>id : {post.id}</p>
-        </div>
-      ))}
+      <div key={`${post.id}`}>
+        <h1>title : {post.title}</h1>
+        <p>body : {post.body}</p>
+        {/* <p>id : {post.id}</p> */}
+      </div>
     </>
   )
 }
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
-  const res = await fetch('https://jsonplaceholder.typicode.com/posts')
-  const posts = await res.json()
+export const getStaticProps: GetStaticProps<Props> = async (context) => {
+  let id = context.params?.id ?? '0'
+  if (Array.isArray(id)) {
+    id = id[0]
+  }
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
+  const post = await res.json()
 
   return {
-    props: { posts },
+    props: { post },
   }
 }
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   const res = await fetch('https://jsonplaceholder.typicode.com/posts')
   const posts = await res.json()
 
