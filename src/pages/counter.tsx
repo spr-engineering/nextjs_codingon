@@ -8,7 +8,7 @@ const useCounter = () => ({
   reset: useResetRecoilState(countState),
 })
 
-const Counter = () => {
+export default function Counter() {
   const { count, increment, decrement, reset } = useCounter()
   const notUsed = 0
 
@@ -23,5 +23,3 @@ const Counter = () => {
     </div>
   )
 }
-
-export default Counter
