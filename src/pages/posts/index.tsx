@@ -18,6 +18,7 @@ export default function GSP({ posts }: Props) {
         <div key={`${post.id}`}>
           <h1>title : {post.title}</h1>
           <p>body : {post.body}</p>
+          <p>id : {post.id}</p>
         </div>
       ))}
     </>
