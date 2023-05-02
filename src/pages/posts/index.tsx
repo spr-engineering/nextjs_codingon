@@ -11,7 +11,7 @@ interface Props {
   posts: Post[]
 }
 
-const GSP = ({ posts }: Props) => {
+export default function GSP({ posts }: Props) {
   return (
     <>
       {posts.map((post) => (
@@ -32,5 +32,3 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     props: { posts },
   }
 }
-
-export default GSP
