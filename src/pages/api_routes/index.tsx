@@ -45,7 +45,9 @@ export default function ApiRoute() {
             <h4>dynamic api routes</h4>
             <ul>
               <li>
-                input one route
+                <strong>single route</strong>
+                <br />
+                /api/routes_example/dynamic_routes/[pid].ts
                 <br />
                 <input
                   value={dynamicInput}
@@ -62,7 +64,10 @@ export default function ApiRoute() {
                 </Link>
               </li>
               <li>
-                catch all routes (separate by &apos;/&apos;, ex.1/2/3)
+                <strong>catch all routes</strong> (separate by &apos;/&apos;,
+                ex.1/2/3)
+                <br />
+                /api/routes_example/dynamic_routes/catch_all_routes/[...pid].ts
                 <br />
                 <input
                   value={catchAllRoutesInput}
