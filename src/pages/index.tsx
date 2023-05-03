@@ -22,6 +22,9 @@ export default function Home() {
             <Link href="/router">router</Link>
           </li>
           <li>
+            <Link href="/api_routes">api_routes</Link>
+          </li>
+          <li>
             <Link href="/react_hook_form">react-hook-form</Link>
           </li>
         </ul>
