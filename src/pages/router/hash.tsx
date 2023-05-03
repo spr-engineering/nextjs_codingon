@@ -1,8 +1,8 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
-import Layout from '@/components/layout/Layout'
-import IntroduceCodingON from '@/components/component_and_layout/IntroduceCodingON'
+import Layout from '@components/layout/Layout'
+import IntroduceCodingON from '@components/component_and_layout/IntroduceCodingON'
 
 const Hash = () => {
   const router = useRouter()
