@@ -4,11 +4,8 @@ import { useEffect, useState } from 'react'
 
 export default function ApiRoute() {
   const [name, setName] = useState('')
-  const [dynamicRoutesEx, setDynamicRoutesEx] = useState('')
-  const [statusResult, setStatusResult] = useState('')
-  const [jsonResult, setJsonResult] = useState('')
-  const [redirectResult, setRedirectResult] = useState('')
-  const [sendResult, setSendResult] = useState('')
+  const [dynamicInput, setDynamicInput] = useState('')
+  const [catchAllRoutesInput, setCatchAllRoutesInput] = useState('')
 
   const fetchHello = async () => {
     const res = await fetch('/api/routes_example/hello')
@@ -16,42 +13,8 @@ export default function ApiRoute() {
     setName(name)
   }
 
-  const dynamicRouting = async () => {
-    const res = await fetch(`/api/routes_example/dynamic_routes/123`)
-    const { id } = await res.json()
-    setDynamicRoutesEx(id)
-  }
-
-  const status = async () => {
-    const res = await fetch('/api/routes_example/status')
-    const { message } = await res.json()
-    setStatusResult(message)
-  }
-
-  const json = async () => {
-    const res = await fetch('/api/routes_example/json')
-    const { error } = await res.json()
-    setJsonResult(error)
-  }
-
-  const redirect = async () => {
-    const res = await fetch('/api/routes_example/redirect')
-    const { error } = await res.json()
-    setRedirectResult(error)
-  }
-
-  const send = async () => {
-    const res = await fetch('/api/routes_example/send')
-    const { message } = await res.json()
-    setSendResult(message)
-  }
-
   useEffect(() => {
     fetchHello()
-    dynamicRouting()
-    status()
-    json()
-    send()
   }, [])
 
   return (
@@ -71,6 +34,9 @@ export default function ApiRoute() {
                 <Link href="/api/routes_example/hello">
                   /api/routes_example/hello
                 </Link>
+                <div>
+                  res.status(200).json(&#123; name: &apos;John Doe&apos; &#125;)
+                </div>
                 <div>result : {name}</div>
               </li>
             </ul>
@@ -79,16 +45,39 @@ export default function ApiRoute() {
             <h4>dynamic api routes</h4>
             <ul>
               <li>
-                <Link href="/api/routes_example/dynamic_routes/123">
-                  /api/routes_example/dynamic_routes/123
+                input one route
+                <br />
+                <input
+                  value={dynamicInput}
+                  onChange={(e) => {
+                    setDynamicInput(e.target.value)
+                  }}
+                />
+                <br />
+                result :{' '}
+                <Link
+                  href={`/api/routes_example/dynamic_routes/${dynamicInput}`}
+                >
+                  /api/routes_example/dynamic_routes/{dynamicInput}
                 </Link>
-                <div>result : {dynamicRoutesEx}</div>
               </li>
               <li>
-                <Link href="/api/routes_example/dynamic_routes/JohnDoe">
-                  /api/routes_example/dynamic_routes/JohnDoe
+                catch all routes (separate by &apos;/&apos;, ex.1/2/3)
+                <br />
+                <input
+                  value={catchAllRoutesInput}
+                  onChange={(e) => {
+                    setCatchAllRoutesInput(e.target.value)
+                  }}
+                />
+                <br />
+                result :{' '}
+                <Link
+                  href={`/api/routes_example/dynamic_routes/catch_all_routes/${catchAllRoutesInput}`}
+                >
+                  /api/routes_example/dynamic_routes/catch_all_routes/
+                  {catchAllRoutesInput}
                 </Link>
-                <div>result : JohnDoe</div>
               </li>
             </ul>
           </li>
@@ -99,39 +88,35 @@ export default function ApiRoute() {
                 <strong>res.status(code)</strong> : Setting the status code of a
                 response
                 <div>
-                  <Link href="/api/routes_example/status">
-                    /api/routes_example/status
-                  </Link>{' '}
-                  result : {statusResult}
+                  res.status(200).json( &#123; message: &apos;Hello from
+                  Next.js!&apos; &#125;){' '}
+                  <Link href="/api/routes_example/status">▶ result</Link>
                 </div>
               </li>
               <li>
                 <strong>res.json(body)</strong> : Sends a JSON response. body
                 must be a serializable object
                 <div>
-                  <Link href="/api/routes_example/json">
-                    /api/routes_example/json
-                  </Link>{' '}
-                  result : {jsonResult}
+                  res.status(200).json( &#123; message: &apos;Hello from
+                  Next.js!&apos; &#125;){' '}
+                  <Link href="/api/routes_example/json">▶ result</Link>
                 </div>
               </li>
               <li>
                 <strong>res.send(body)</strong> : Sends the HTTP response. body
                 can be a string, an object or a Buffer
                 <div>
-                  <Link href="/api/routes_example/send">
-                    /api/routes_example/send
-                  </Link>{' '}
-                  result : {sendResult}
+                  res.send(&#123; message: &apos;Hello from
+                  Next.js!&apos;&#125;){' '}
+                  <Link href="/api/routes_example/send">▶ result</Link>
                 </div>
               </li>
               <li>
                 <strong>res.redirect([status,] path)</strong> : Redirects to a
                 specified path or URL{' '}
                 <div>
-                  <Link href="/api/routes_example/redirect">
-                    /api/routes_example/redirect
-                  </Link>
+                  res.redirect(307, &apos;/&apos;){' '}
+                  <Link href="/api/routes_example/redirect">▶ result</Link>
                 </div>
               </li>
             </ul>
