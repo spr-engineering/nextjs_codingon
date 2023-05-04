@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import Layout from '@/components/layout/Layout'
+import Layout from '@components/layout/Layout'
 import { useEffect, useState } from 'react'
 
 export default function Off() {
