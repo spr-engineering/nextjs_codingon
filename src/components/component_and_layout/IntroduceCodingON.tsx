@@ -16,6 +16,7 @@ export default function IntroduceCodingON() {
       <style jsx>{`
         .introduce-codingon-container {
           padding: 20px;
+          background-color: antiquewhite;
         }
         .paragraph {
           margin: 20px;
