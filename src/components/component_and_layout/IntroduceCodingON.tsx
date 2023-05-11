@@ -1,30 +1,21 @@
 import { codingONIntro } from '@/data/intro'
+import Paragraph from './Paragraph'
 
 export default function IntroduceCodingON() {
   return (
     <>
       <div className="introduce-codingon-container">
-        {codingONIntro.map((data) => {
-          return (
-            <div className="paragraph" key={data}>
-              {data}
-            </div>
-          )
-        })}
+        {codingONIntro.map((data) => (
+          <>
+            <Paragraph data={data} />
+          </>
+        ))}
       </div>
 
       <style jsx>{`
         .introduce-codingon-container {
-          padding: 20px;
+          padding: 1px 0;
           background-color: antiquewhite;
-        }
-        .paragraph {
-          margin: 20px;
-          padding: 20px;
-          border: 0px;
-          border-radius: 20px;
-          background-color: white;
-          cursor: default;
         }
       `}</style>
     </>
