@@ -19,9 +19,6 @@ export default function Paragraph({ data }: Props) {
           background-color: white;
           cursor: default;
         }
-        .component {
-          font-weight: 600;
-        }
       `}</style>
     </>
   )
