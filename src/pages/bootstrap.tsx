@@ -12,27 +12,49 @@ export default function Bootstrap() {
   return (
     <>
       <Layout>
-        <BootstrapNavbar />
         <div>
+          <h4 className="bootstrap-header">Navbar</h4>
+          <BootstrapNavbar />
+        </div>
+        <div>
+          <h4 className="bootstrap-header">Accordion</h4>
           <BootstrapAccordion />
-          <hr />
+        </div>
+        <div>
+          <h4 className="bootstrap-header">Buttons</h4>
           <BootstrapButtons />
-          <br />
-          <hr />
+        </div>
+        <div>
+          <h4 className="bootstrap-header">Toast</h4>
           <BootstrapToast />
-          <hr />
+        </div>
+        <div>
+          <h4 className="bootstrap-header">Modal</h4>
           <BootstrapModal />
-          <hr />
+        </div>
+        <div>
+          <h4 className="bootstrap-header">ProgressBar</h4>
           <BootstrapProgressBar />
-          <hr />
+        </div>
+        <div>
+          <h4 className="bootstrap-header">Spinners</h4>
           <BootstarpSpinners />
         </div>
       </Layout>
 
       <style jsx>{`
         div {
-          padding: 20px;
+          padding: 30px 20px 40px 20px;
           text-align: center;
+        }
+        div:not(:last-of-type) {
+          border-style: none none solid;
+          border-width: 1px;
+          border-color: gray;
+        }
+        h4 {
+          font-weight: 600;
+          padding: 10px;
         }
       `}</style>
     </>
