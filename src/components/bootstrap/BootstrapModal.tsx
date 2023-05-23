@@ -2,6 +2,8 @@ import { useState } from 'react'
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 
+// react-bootstrap modal
+// https://react-bootstrap.netlify.app/docs/components/modal
 export default function BootstrapModal() {
   const [show, setShow] = useState(false)
   const handleClose = () => setShow(false)

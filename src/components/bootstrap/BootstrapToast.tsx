@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button'
 import Toast from 'react-bootstrap/Toast'
 
+// react-bootstrap docs
+// https://react-bootstrap.netlify.app/docs/components/toasts
 export default function BootstrapToast() {
   const [show, setShow] = useState(true)
   const toggleShow = () => setShow(!show)
@@ -13,6 +15,7 @@ export default function BootstrapToast() {
       </Button>
       <div>
         <Toast show={show} onClose={toggleShow}>
+          {/* <Toast show={show} onClose={toggleShow} delay={2000} autohide> */}
           <Toast.Header>
             <strong className="me-auto">Bootstrap</strong>
             <small>11 mins ago</small>

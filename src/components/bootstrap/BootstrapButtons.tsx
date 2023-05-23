@@ -1,5 +1,7 @@
 import Button from 'react-bootstrap/Button'
 
+// react-bootstrap docs
+// https://react-bootstrap.netlify.app/docs/components/buttons
 export default function BootstrapButtons() {
   return (
     <>
