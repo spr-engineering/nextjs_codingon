@@ -3,6 +3,8 @@ import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 
+// react-bootstrap docs
+// https://react-bootstrap.netlify.app/docs/components/navbar
 export default function BootstrapNavbar() {
   return (
     <>

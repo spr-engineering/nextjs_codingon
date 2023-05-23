@@ -7,7 +7,7 @@ export default function IntroduceCodingON() {
       <div className="introduce-codingon-container">
         {codingONIntro.map((data) => (
           <>
-            <Paragraph data={data} />
+            <Paragraph data={data.content} key={data.id} />
           </>
         ))}
       </div>
