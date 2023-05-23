@@ -5,9 +5,9 @@ export default function IntroduceCodingON() {
   return (
     <>
       <div className="introduce-codingon-container">
-        {codingONIntro.map((data) => (
+        {codingONIntro.map((data, idx) => (
           <>
-            <Paragraph data={data} />
+            <Paragraph data={data} key={idx} />
           </>
         ))}
       </div>
